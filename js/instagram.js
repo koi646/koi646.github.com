@@ -27,7 +27,7 @@ var Instagram = (function(){
 				<ul class="img-box-ul">'+liTmpl+'</ul>\
 				</section>').appendTo($(".instagram"));
 		}
-		console.log($(".instagram").lazyload);
+
 		$(".instagram").lazyload();
 		changeSize();
 
@@ -58,7 +58,13 @@ var Instagram = (function(){
 			var m = d.getMonth()+1;
 			var src = replacer(data[i].images.low_resolution.url);
 			var bigSrc = replacer(data[i].images.standard_resolution.url);
-			var text = data[i].caption ? data[i].caption.text : ''; // data[i].caption 有可能为 null
+			var text;
+			if (!data[i].caption){
+				text = "";
+			}
+			else{
+				text = data[i].caption.text;
+			}
 			var key = y+"-"+m;
 			if(imgObj[key]){
 				imgObj[key].srclist.push(src);
@@ -78,7 +84,7 @@ var Instagram = (function(){
 	}
 
 	var getList = function(url){
-		$(".open-ins").html("图片来自instagram，正在加载中…");
+		$(".open-ins").html("图片来自instagram，正在加载中…");console.log(url);
 		$.ajax({
 			url: url,
 			type:"GET",
@@ -119,18 +125,14 @@ var Instagram = (function(){
 
 	return {
 		init:function(){
-			//getList("https://api.instagram.com/v1/users/438522285/media/recent/?access_token=438522285.2082eef.ead70f432f444a2e8b1b341617637bf6&count=100");
+			getList("https://api.instagram.com/v1/users/1645543833/media/recent/?access_token=1645543833.3b9d9a1.50ac736419f8483ca7fb4c4f389ac1d8&count=100");
 			var insid = $(".instagram").attr("data-client-id");
-			console.log(insid,"<<<<","3872009b8ad44f9bb140a0b4414b5f9c");
-            var userId = $(".instagram").attr("data-user-id");
-
 			if(!insid){
 				alert("Didn't set your instagram client_id.\nPlease see the info on the console of your brower.");
 				console.log("Please open 'http://instagram.com/developer/clients/manage/' to get your client-id.");
 				return;
 			}
-			console.log("https://api.instagram.com/v1/users/"+ userId +"/media/recent/?client_id="+insid+"&count=100");
-			getList("https://api.instagram.com/v1/users/"+ userId +"/media/recent/?client_id="+insid+"&count=100");
+			//getList("https://api.instagram.com/v1/users/438522285/media/recent/?client_id="+insid+"&count=100");
 			bind();
 		}
 	}

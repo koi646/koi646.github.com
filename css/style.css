@@ -460,12 +460,8 @@ a {
     padding: 10px 0;
     margin-left: 0;
   }
-  #container #footer .footer-left {
-    float: initial;
-    margin-bottom: 10px;
-  }
-  #container #footer .footer-right {
-    float: initial;
+  #container #footer {
+    margin: 10px;
   }
 }
 .header-author {
@@ -720,16 +716,11 @@ a {
 }
 .archives-wrap {
   position: relative;
-  margin: 0 30px;
+  margin-left: 40px;
+  margin-right: 40px;
   padding-right: 60px;
   border-bottom: 1px solid #eee;
   background: #fff;
-}
-.archives-wrap:first-child {
-  margin-top: 30px;
-}
-.archives-wrap:last-child {
-  margin-bottom: 80px;
 }
 .archives-wrap .archive-year-wrap {
   line-height: 35px;
@@ -851,14 +842,12 @@ a {
   padding-left: 8px;
   font-size: 12px;
 }
-.body-wrap {
-  margin-bottom: 80px;
-}
 .article {
-  margin: 30px;
+  margin: 30px 40px 30px 40px;
   position: relative;
   border: 1px solid #ddd;
   background: #fff;
+  visibility: hidden;
   -webkit-transition: all 0.2s ease-in;
 }
 .article.show {
@@ -869,9 +858,6 @@ a {
   -moz-animation: cd-bounce-1 0.6s;
   -ms-animation: cd-bounce-1 0.6s;
   animation: cd-bounce-1 0.6s;
-}
-.article.hidden {
-  visibility: hidden;
 }
 .article img {
   max-width: 100%;
@@ -1047,7 +1033,7 @@ a {
   max-width: 100%;
 }
 .article-entry strong {
-  font-weight: bold;
+  font-weight: 300;
 }
 .article-entry .caption {
   display: block;
@@ -1074,9 +1060,6 @@ a {
   border: 1px solid #ccc;
   text-shadow: 0 1px #444;
   font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
-}
-.article-entry pre code {
-  font-size: 14px;
 }
 .article-entry table {
   width: 100%;
@@ -1330,16 +1313,11 @@ a {
 }
 .archives-wrap {
   position: relative;
-  margin: 0 30px;
+  margin-left: 40px;
+  margin-right: 40px;
   padding-right: 60px;
   border-bottom: 1px solid #eee;
   background: #fff;
-}
-.archives-wrap:first-child {
-  margin-top: 30px;
-}
-.archives-wrap:last-child {
-  margin-bottom: 80px;
 }
 .archives-wrap .archive-year-wrap {
   line-height: 35px;
@@ -1463,18 +1441,17 @@ a {
 }
 .article-entry pre,
 .article-entry .highlight {
-  background: #272822;
+  background: #4d4d4d;
   margin: 10px 0;
   padding: 10px 10px;
   overflow: auto;
   color: #4c4c4c;
   line-height: 22.400000000000002px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
 }
 .article-entry .highlight .gutter pre,
 .article-entry .gist .gist-file .gist-data .line-numbers {
   color: #666;
+  font-size: 0.85em;
 }
 .article-entry pre,
 .article-entry code {
@@ -1482,17 +1459,18 @@ a {
 }
 .article-entry code {
   background: #eee;
+  text-shadow: 0 1px #fff;
   padding: 0 0.3em;
   border: none;
 }
 .article-entry pre {
-  color: #fff;
+  color: #eef8fc;
 }
 .article-entry pre code {
   background: none;
   text-shadow: none;
   padding: 0;
-  color: #fff;
+  color: #eef8fc;
 }
 .article-entry .highlight pre {
   border: none;
@@ -1509,7 +1487,7 @@ a {
 }
 .article-entry .highlight figcaption {
   font-size: 0.85em;
-  color: highlight-comment;
+  color: #a6e22e;
   line-height: 1em;
   margin-bottom: 1em;
 }
@@ -1532,8 +1510,8 @@ a {
   text-shadow: none;
 }
 .article-entry .highlight .line {
-  font-size: 15px;
-  height: 15px;
+  font-size: 14px;
+  height: 22.400000000000002px;
 }
 .article-entry .gist {
   margin: 0 -20px;
@@ -1567,7 +1545,7 @@ a {
 }
 .article-entry .gist .gist-file .gist-meta {
   background: #272822;
-  color: highlight-comment;
+  color: #a6e22e;
   font: 0.85em "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-shadow: 0 0;
   padding: 0;
@@ -1582,57 +1560,70 @@ a {
   text-decoration: underline;
 }
 pre .comment {
-  color: #75715e;
+  color: #666;
 }
-pre .keyword,
-pre .function .keyword,
-pre .class .params {
-  color: #66d9ef;
-}
-pre .tag,
-pre .doctype,
-pre .params,
-pre .function {
-  color: #fff;
-}
-pre .css ~ * .tag,
-pre .title,
-pre .at_rule,
-pre .at_rule .keyword,
-pre .preprocessor,
-pre .preprocessor .keyword {
-  color: #f92672;
-}
-pre .attribute,
-pre .built_in,
-pre .class,
-pre .css ~ * .class,
-pre .function .title {
+pre .title {
   color: #a6e22e;
 }
-pre .value,
-pre .string {
+pre .variable,
+pre .attribute,
+pre .tag,
+pre .regexp,
+pre .ruby .constant,
+pre .xml .tag .title,
+pre .xml .pi,
+pre .xml .doctype,
+pre .html .doctype,
+pre .css .id,
+pre .css .class,
+pre .css .pseudo {
+  color: #f2777a;
+}
+pre .number,
+pre .preprocessor,
+pre .built_in,
+pre .literal,
+pre .params,
+pre .constant {
+  color: #66d9ef;
+}
+pre .class,
+pre .ruby .class .title,
+pre .css .rules .attribute {
   color: #e6db74;
 }
-pre .number {
-  color: #7163d7;
+pre .string,
+pre .value,
+pre .inheritance,
+pre .header,
+pre .ruby .symbol,
+pre .xml .cdata {
+  color: #e6db74;
 }
-pre .id,
-pre .css ~ * .id {
-  color: #fd971f;
+pre .css .hexcolor {
+  color: #6cc;
+}
+pre .function,
+pre .python .decorator,
+pre .python .title,
+pre .ruby .function .title,
+pre .ruby .title .keyword,
+pre .perl .sub,
+pre .javascript .title,
+pre .coffeescript .title {
+  color: #69c;
+}
+pre .keyword,
+pre .javascript .function {
+  color: #f92672;
 }
 #footer {
   font-size: 12px;
   font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
   text-shadow: 0 1px #fff;
-  position: absolute;
-  bottom: 30px;
-  opacity: 0.6;
-  width: 100%;
+  margin: 10px 40px 10px 40px;
+  padding-bottom: 30px;
   text-align: center;
-}
-#footer .outer {
-  padding: 0 30px;
 }
 .footer-left {
   float: left;
@@ -1656,7 +1647,6 @@ pre .css ~ * .id {
 }
 #page-nav {
   text-align: center;
-  margin-top: 30px;
 }
 #page-nav .page-number {
   width: 20px;
@@ -1669,7 +1659,6 @@ pre .css ~ * .id {
   display: inline-block;
   color: #fff;
   line-height: 20px;
-  font-size: 12px;
   margin: 0 3px 30px;
 }
 #page-nav .page-number:hover {
@@ -1694,7 +1683,7 @@ pre .css ~ * .id {
   opacity: 1;
 }
 #post-instagram {
-  padding: 30px;
+  padding: 30px 40px 30px 40px;
 }
 #post-instagram .article-entry {
   padding-right: 0;
@@ -2136,25 +2125,6 @@ pre .css ~ * .id {
   margin-top: 9px;
 }
 .article-category:after {
-  float: left;
-  content: "";
-  margin-right: 20px;
-  margin-top: 9px;
-  float: left;
-}
-.article-pop-out {
-  float: left;
-}
-.article-pop-out:before {
-  float: left;
-  color: #999;
-  content: "\f08d";
-  font: 16px FontAwesome;
-  float: left;
-  margin-right: 10px;
-  margin-top: 9px;
-}
-.article-pop-out:after {
   float: left;
   content: "";
   margin-right: 20px;

@@ -1,20 +1,34 @@
-define([], function(){
+(function(root, factory) {
+    if(typeof define === 'function' && define.amd) {
+        define([], factory);
+    } else {
+        root['Mobile'] = factory();
+    }
+}(this, function() {
 	var _isShow = false;
 	var $tag, $aboutme, $friends;
-
-	var ctn,radio,scaleW,idx,basicwrap;
+	//构造函数
+	function Mobile(opts){
+		//构造函数需要的参数
+		this.ctn = opts.ctn;
+		//构造四步
+		this.init();
+		this.renderDOM();
+		this.combine();
+		this.bindDOM();
+	}
 
 	//第一步 -- 初始化
-	var reset = function() {
+	Mobile.prototype.init = function() {
 		//设定窗口比率
-		radio = document.body.scrollHeight/document.body.scrollWidth;
+		this.radio = document.body.scrollHeight/document.body.scrollWidth;
 		//设定一页的宽度
-		scaleW = document.body.scrollWidth;
+		this.scaleW = document.body.scrollWidth;
 		//设定初始的索引值
-		idx = 0;
+		this.idx = 0;
 	};
 	//第一步 -- 组合
-	var combine = function(){
+	Mobile.prototype.combine = function(){
 		if($tag){
 			document.getElementById("js-mobile-tagcloud").innerHTML = $tag.innerHTML;
 		}
@@ -26,7 +40,7 @@ define([], function(){
 		}
 	}
 	//第三步 -- 根据数据渲染DOM
-	var renderDOM = function(){
+	Mobile.prototype.renderDOM = function(){
 		//生成节点
 		var $viewer = document.createElement("div");
 		$viewer.id = "viewer";
@@ -48,14 +62,15 @@ define([], function(){
 		//主要图片节点
 		document.getElementsByTagName("body")[0].appendChild($viewer);
 		var wrap = document.getElementById("viewer-box");
-		basicwrap = wrap;
+		this.wrap = wrap;
 		wrap.style.height = document.body.scrollHeight + 'px';
 	};
 
-	var show = function(target, idx){
+	Mobile.prototype.show = function(target, idx){
+		var self = this;
 		document.getElementById("viewer").className = "";
 		setTimeout(function(){
-			basicwrap.className = "anm-swipe";
+			self.wrap.className = "anm-swipe";
 		},0);
 		_isShow = true;
 		document.ontouchstart=function(e){
@@ -65,7 +80,8 @@ define([], function(){
 		}
 	}
 
-	var hide = function(){
+	Mobile.prototype.hide = function(){
+		var self = this;
 		document.getElementById("viewer-box").className = "";
 		_isShow = false;
 		document.ontouchstart=function(){
@@ -74,8 +90,9 @@ define([], function(){
 	}
 
 	//第四步 -- 绑定 DOM 事件
-	var bindDOM = function(){
-		var scaleW = scaleW;
+	Mobile.prototype.bindDOM = function(){
+		var self = this;
+		var scaleW = self.scaleW;
 		
 		//滑动隐藏
 		document.getElementById("viewer-box").addEventListener("webkitTransitionEnd", function(){
@@ -84,13 +101,14 @@ define([], function(){
 				document.getElementById("viewer").className = "hide";
 				_isShow = true;
 			}else{
+				//console.log(self.idx);
 			}
 			
 		}, false);
 
 		//点击展示和隐藏
-		ctn.addEventListener("touchend", function(){
-			show();
+		self.ctn.addEventListener("touchend", function(){
+			self.show();
 		}, false);
 
 		var $right = document.getElementsByClassName("viewer-box-r")[0];
@@ -102,7 +120,7 @@ define([], function(){
 		$right.addEventListener("touchend", function(){
 			touchEndTime = + new Date();
 			if(touchEndTime - touchStartTime < 300){
-				hide();
+				self.hide();
 			}
 			touchStartTime = 0;
 			touchEndTime = 0;
@@ -128,27 +146,6 @@ define([], function(){
 			$('html, body').animate({scrollTop:0}, 'slow');
 		}, false);
 	};
-
-	var resetTags = function(){
-		var tags = $(".tagcloud a");
-		tags.css({"font-size": "12px"});
-		for(var i=0,len=tags.length; i<len; i++){
-			var num = tags.eq(i).html().length % 5 +1;
-			tags[i].className = "";
-			tags.eq(i).addClass("color"+num);
-		}
-	}
-
-	return{
-		init: function(){
-			//构造函数需要的参数
-			ctn = document.getElementsByClassName("slider-trigger")[0];
-			//构造四步
-			reset();
-			renderDOM();
-			combine();
-			bindDOM();
-			resetTags();
-		}
-	}
-})
+	
+	return Mobile;
+}))
