@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://www.koily.com/2015-02/10/react-study/index.html">
 <meta property="og:site_name" content="鲤鱼">
 <meta property="og:description" content="facebook推出了前端组件化 javascript框架——React,又闻react native在 ios端 解决了 html 书写 view 的性能问题。对React更加有兴趣,所以初步学习了下。">
-<meta property="og:updated_time" content="2015-10-05T04:12:27.000Z">
+<meta property="og:updated_time" content="2015-10-05T17:29:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web前端框架——React">
 <meta name="twitter:description" content="facebook推出了前端组件化 javascript框架——React,又闻react native在 ios端 解决了 html 书写 view 的性能问题。对React更加有兴趣,所以初步学习了下。">
@@ -234,14 +234,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>facebook</strong>推出了前端组件化 javascript框架——<a href="http://facebook.github.io/react/index.html" target="_blank" rel="external">React</a>,又闻react native在 <strong>ios</strong>端 解决了 html 书写 view 的性能问题。对<code>React</code>更加有兴趣,所以初步学习了下。<br><a id="more"></a></p>
-<p>##JSX<br>jsx是react推荐使用的语法,所以在学习react之前,首先要了解jsx</p>
+<h2 id="JSX">JSX</h2><p>jsx是react推荐使用的语法,所以在学习react之前,首先要了解jsx</p>
 <ul>
 <li>什么是<code>jsx</code>?<br>jsx是是一种用<code>xml</code>实现javascript的语法糖,使用jsx的方法有两种:</li>
 </ul>
 <p>1.在html中引入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;script type=text/javascript src=JSXTransformer.js&#62;&#60;/script&#62;&#10;&#60;script type=text/jsx src=yourscript&#62;&#60;/script&#62;</span><br></pre></td></tr></table></figure></p>
 <p>注意<code>type=text/jsx</code>属性 引入的js文件不会直接执行,而是会被当做<code>jsx</code>字符串由<code>JSXTransformer.js</code>处理后执行。这在生产环境中会导致性能问题,所以在产品正式发布的时候推荐采用第二种做法。</p>
 <p>2.通过<code>npm install -g react-tools</code>安装<code>jsx</code>转换工具 键入命令<code>jsx --watch /</code>来监测，自动生成转换后的js代码。<br>这里就不深入了解jsx了,react才是我们的重点。</p>
-<p>##Component<br>component是react的核心内容,一切的复用是围绕着component展开的。<br>react中创建一个component:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var Demo = React.createClass(&#123;&#10;&#9;//&#24517;&#39035;&#21547;&#26377;render&#26041;&#27861;,&#21542;&#21017;&#20250;&#25253;&#38169;!&#10;&#9;render: function()&#123;&#10;&#9;&#9;return (&#10;&#9;&#9;&#9;&#60;p className=&#34;test&#34;&#62;this is a test!&#60;/p&#62;//jsx&#20013;class&#20026;className&#10;&#9;&#9;)&#10;&#9;&#125;&#10;&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Component">Component</h2><p>component是react的核心内容,一切的复用是围绕着component展开的。<br>react中创建一个component:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var Demo = React.createClass(&#123;&#10;&#9;//&#24517;&#39035;&#21547;&#26377;render&#26041;&#27861;,&#21542;&#21017;&#20250;&#25253;&#38169;!&#10;&#9;render: function()&#123;&#10;&#9;&#9;return (&#10;&#9;&#9;&#9;&#60;p className=&#34;test&#34;&#62;this is a test!&#60;/p&#62;//jsx&#20013;class&#20026;className&#10;&#9;&#9;)&#10;&#9;&#125;&#10;&#125;)</span><br></pre></td></tr></table></figure></p>
 <p><strong>组件的命名首字母必须大写,否则会报错</strong></p>
 <p>然后调用<code>React.render</code>方法渲染<code>DOM</code>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">React.render(&#60;Demo/&#62;,document.querySelector(&#39;div&#39;));</span><br></pre></td></tr></table></figure></p>
 <p>react最简单的使用就是这样。接下来详细介绍各个常用的函数使用。</p>
@@ -256,7 +256,7 @@
 </ul>
 <p><strong>state的每次更新都会引起 component 的刷新</strong></p>
 <p>值得注意的是state中的值都是字符串的形式存储的,所以获取类型要进行类型转换。<br>以上代码中对 onChange 事件进行绑定传入的对象<code>e</code>为javascript事件对象</p>
-<p>##Lifetime<br>理解react的生命周期可以使用react的高级功能。<br>react的在生命周期对应的回调函数可以对dom进行批量操作,因为对dom的操作代价是很高的,所以批量操作可以提高react的响应速度。</p>
+<h2 id="Lifetime">Lifetime</h2><p>理解react的生命周期可以使用react的高级功能。<br>react的在生命周期对应的回调函数可以对dom进行批量操作,因为对dom的操作代价是很高的,所以批量操作可以提高react的响应速度。</p>
 <hr>
 <p>未完待续</p>
 
