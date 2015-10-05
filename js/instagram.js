@@ -84,7 +84,7 @@ var Instagram = (function(){
 	}
 
 	var getList = function(url){
-		$(".open-ins").html("图片来自instagram，正在加载中…");console.log(url);
+		$(".open-ins").html("图片来自instagram，正在加载中…");
 		$.ajax({
 			url: url,
 			type:"GET",
@@ -125,7 +125,7 @@ var Instagram = (function(){
 
 	return {
 		init:function(){
-			getList("https://api.instagram.com/v1/users/1645543833/media/recent/?access_token=1645543833.3b9d9a1.50ac736419f8483ca7fb4c4f389ac1d8&count=100");
+			getList("https://api.instagram.com/v1/users/1645543833/media/recent/?access_token=1645543833.3872009.99f1f5ebfa714c03a4c030bf53aaf071&count=100");
 			var insid = $(".instagram").attr("data-client-id");
 			if(!insid){
 				alert("Didn't set your instagram client_id.\nPlease see the info on the console of your brower.");
