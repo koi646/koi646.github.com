@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>阿里前端面试知识点总结 | 鲤鱼</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="简历已经投了 阿里,腾讯的内推,对自己还是没底。想着总不能坐以待毙,好歹复习一下知识点,巩固下前端知识,想必也是极好的。（：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阿里前端面试知识点总结">
+<meta property="og:url" content="http://www.koily.com/2015-02/22/interview/index.html">
+<meta property="og:site_name" content="鲤鱼">
+<meta property="og:description" content="简历已经投了 阿里,腾讯的内推,对自己还是没底。想着总不能坐以待毙,好歹复习一下知识点,巩固下前端知识,想必也是极好的。（：">
+<meta property="og:updated_time" content="2015-10-05T04:12:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="阿里前端面试知识点总结">
+<meta name="twitter:description" content="简历已经投了 阿里,腾讯的内推,对自己还是没底。想着总不能坐以待毙,好歹复习一下知识点,巩固下前端知识,想必也是极好的。（：">
+  
+    <link rel="alternative" href="/atom.xml" title="鲤鱼" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="avate.jpeg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">鲤鱼</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">like a dog,like a god</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/不语">不语</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/koi646" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/li-yu-hang-65" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="http://www.douban.com/people/sololsl/" title="douban">douban</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/2201493834" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/web前端/" style="font-size: 20px;">web前端</a> <a href="/tags/不语/" style="font-size: 10px;">不语</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/惊蛰/" style="font-size: 10px;">惊蛰</a> <a href="/tags/源码阅读/" style="font-size: 10px;">源码阅读</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://jerryzou.com/">JerryZou</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://vinthony.me/">寸晓东</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://litten.github.io/">Litten</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">毕业于 西安电子科技大学2012届,想成为全栈工程师。理想是在活出不一样的人生。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">鲤鱼</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="avate.jpeg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">鲤鱼</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">like a dog,like a god</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/不语">不语</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/koi646" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/li-yu-hang-65" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="http://www.douban.com/people/sololsl/" title="douban">douban</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/2201493834" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-interview" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015-02/22/interview/" class="article-date">
+  	<time datetime="2015-02-22T03:50:00.000Z" itemprop="datePublished">2月 22 2015</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      阿里前端面试知识点总结
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>简历已经投了 阿里,腾讯的内推,对自己还是没底。想着总不能坐以待毙,好歹复习一下知识点,巩固下前端知识,想必也是极好的。（：<br><a id="more"></a></p>
+<p><strong>js的数据类型有哪些？</strong></p>
+<p>简单数据类型:String Number Boolean Null Undefind</p>
+<p>复杂数据类型: Object</p>
+<p>所有对象派生自Object,Undefind类型只有一个值undefind,Null类型只有一个值null。未定义或者定义未赋值的变量,对其进行<code>typeof</code>类型获取的时候,得到<code>undefind</code>。(有个坑爹的地方是<code>typeof null</code>竟然得到的答案是<strong>object</strong>,我理解为null为空对象的指针,所以对其进行typeof判断为object)</p>
+<p><strong>undefind和null的异同？</strong></p>
+<p>undefind值派生自null,所以<code>null==undefind</code>为true；</p>
+<p>null是空指针,我理解为空对象指针,undefind连指针也没有,所以比较<code>null===undefind</code>为false。</p>
+<p>还有个注意的地方是</p>
+<pre><code><span class="built_in">Number</span>(<span class="literal">null</span>);<span class="comment">//结果是0</span>
+<span class="built_in">Number</span>(undefind);<span class="comment">//结果是NaN</span>
+</code></pre><p><strong>Json和javascript对象的异同,如何进行转换？</strong></p>
+<p>Json是一种数据传输格式,是以字符串的形式。</p>
+<p>Json对象是javascript对象的子集,Json对象没有方法,只有属性键值对。</p>
+<p><strong>Json字符串转换为Json对象</strong>    </p>
+<pre><code>var <span class="built_in">str</span> = '{<span class="string">"name"</span>:<span class="string">"koi"</span>}';
+eval(<span class="string">"("</span>+<span class="built_in">str</span>+<span class="string">")"</span>);<span class="comment">//eval方法的弊端是：1.安全性问题。2.代码如果出错会导致程序崩溃并退出。3.全局变量污染        。</span>
+JSON.parse(<span class="built_in">str</span>);<span class="comment">//安全的做法</span>
+</code></pre><p><strong>Javscript对象转为Json字符串</strong></p>
+<pre><code><span class="tag">JSON</span><span class="class">.stringify</span>(<span class="tag">o</span>);
+</code></pre><p><strong>什么是闭包？</strong></p>
+<p>内部函数访问到外部变量,反之外部函数无法获取到内部函数的变量,就是一个闭包。</p>
+<p><strong>call和apply方法的区别</strong></p>
+<p>call和apply都是javascript中函数对象的方法，都是改变函数执行的作用域</p>
+<p>区别在于接受的参数格式不同，第一个参数都是指定函数执行的作用域，对于call()方法，传递给函数的参数必须逐一列举传入,apply()方法则是以数组的。</p>
+<pre><code><span class="keyword">var</span> Man = <span class="function"><span class="keyword">function</span>(<span class="params">name,age</span>)</span>{    
+    <span class="keyword">this</span>.name = name;
+    <span class="keyword">this</span>.age = age;
+};
+<span class="keyword">var</span> you = <span class="keyword">new</span> Man(<span class="string">'koi'</span>,<span class="number">22</span>)    ;
+<span class="keyword">var</span> show = <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>{    
+    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name,<span class="keyword">this</span>.age);    
+    <span class="built_in">console</span>.log(x,y);
+};
+show.call(you,<span class="string">"这是x"</span>,<span class="string">"这是y"</span>);<span class="comment">//逐一传入参数</span>
+show.apply(you,[<span class="string">"这是x"</span>,<span class="string">"这是y"</span>]);<span class="comment">//以数组的形式传入参数</span>
+</code></pre><p><strong>字符串操作的常见方法有哪些?</strong></p>
+<p>略</p>
+<p><strong>如何实现跨域,常见的方法有哪些?</strong></p>
+<p>jsonp,iframe,还有HTML5的postmessage方法</p>
+<p><strong>javascript声明提前</strong></p>
+<pre><code><span class="keyword">var</span> b = <span class="string">"蜻蜓"</span>  
+<span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="built_in">console</span>.log(b);
+    <span class="keyword">var</span> b = <span class="string">"鲤鱼"</span>;
+}<span class="comment">//会输出undefinde 因为b的声明在函数a中提前了。    </span>
+</code></pre><p><strong>创建对象和对象的继承</strong></p>
+<p style="color:red">字面量创建</p>
+
+<pre><code><span class="keyword">var</span> person = {
+    name:<span class="string">'鲤    鱼'</span>,
+    age:<span class="number">22</span>,
+    say: <span class="function"><span class="keyword">function</span>)</span>{
+        <span class="built_in">console</span>.log(<span class="string">"like a dog,like a god"</span>);
+    }
+}
+</code></pre><p style="color:red">工厂模式</p>
+
+<pre><code><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();
+    obj.name  = <span class="string">"鲤鱼"</span>；
+    obj.age = <span class="number">22</span>;
+    <span class="keyword">return</span> obj;
+}
+<span class="keyword">var</span> man = Person();
+</code></pre><p>工厂模式的弊端是无法判断对象的类型</p>
+<p style="color:red">构造函数模式</p>        
+
+<pre><code><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="keyword">this</span>.name = <span class="string">'鲤鱼'</span>;
+    <span class="keyword">this</span>.age = <span class="number">22</span>,
+    <span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="built_in">console</span>.log(<span class="string">'like a dog,like a god'</span>);
+    }
+}
+<span class="keyword">var</span> person = <span class="keyword">new</span> Person();            
+</code></pre><p>需要注意的是这里的<code>new</code>只是语法糖,和java的<code>new</code>在本质上是不同的。</p>
+<p style="color:red">原型链模式</p>
+
+<pre><code><span class="keyword">var</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+};
+Person.prototype = {
+    name: <span class="string">"蜻蜓"</span>,
+    say: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);
+    }
+}
+</code></pre><p style="color:red">利用原型链实现继承</p>
+
+<p>子类的原型指向父类的实例即课利用js的原型机制实现对象的继承。</p>
+<p>弊端:<br>没法向父类的构造函数中传入参数</p>
+<p style="color:red">构造函数实现继承</p>
+
+<p>利用call或者apply方法改变父类构造函数执行环境并传入参数</p>
+<p>弊端:<br>方法定义在了构造函数里面,造成了额内存的浪费</p>
+<p style="color:red">组合式继承</p>
+
+<p>结合apply函数和原型链实现继承</p>
+<p>弊端:<br>1.构造函数执行了两次(new了一次,apply了一次)<br>2.子类的prototype上有父类的多余属性</p>
+<p style="color:red">组合寄生式</p>
+
+<p>子类的原型不再指向父类的实例,而是object(Father.prototype).从而让子类的原型不含有多余属性,减少父类构造函数的使用次数。</p>
+<p>普遍认为最完美的继承形式。</p>
+<p><strong>蜂鸟招聘项目遇见的问题是什么</strong></p>
+<p>1.由于产品经理需求变更频繁,产品和最初的设计图大相径庭,导致代码臃肿凌乱。</p>
+<p>2.由于判断失误,没有采用angular或者backbone之类的框架,导致注入代码和dom操作在后期越来越凌乱,难以维护。</p>
+<p>产品经理说凑合着用…但这是教训…以后一定会注意了.</p>
+<p><strong>一叶书签遇见的问题</strong><br>1.做一个node爬虫功能的时候遇见编码问题</p>
+<p>解决办法是先判断http头部的<code>content-type</code>,如果没有这个属性,再判断<code>meta</code>标签,但是这样感觉比较损耗性能,不过没想到更加好的解决办法了。</p>
+<p>2.API接口重构</p>
+<p>开始由于没有写API文档,导致后面接口风格规范不统一,对代码的维护和功能的扩展造成了一定的影响。后来采取先统一风格,写好API文档,统一JSON返回格式,再对所有接口进行的规范重构。<br>3.页面模块化结构的问题</p>
+<p>因为缺乏前端架构的经验,没有使用模块化代码的方式,导致不同页面的相同部分代码高度重复,页面代码臃肿,使维护难度变大</p>
+<p><strong>js数组去重方法</strong></p>
+<p>最好的方式是利用hash来用空间换时间.遍历数组的时候对hash进行查找,没有的元素就存到新数组里面去。</p>
+<pre><code><span class="built_in">Array</span>.prototype.unique = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="keyword">var</span> n = {},array = [];
+    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;<span class="keyword">this</span>.length;i++){
+        <span class="keyword">if</span> (!n[<span class="keyword">this</span>[i]]){<span class="comment">//如果hash表里没有,则存进数组里</span>
+        n[[<span class="keyword">this</span>[i]]] = <span class="literal">true</span>;
+        array.push(<span class="keyword">this</span>[i]);
+        }
+    }
+    <span class="keyword">return</span> array;
+}
+</code></pre><p><strong>事件冒泡是什么,事件捕获又是什么？</strong></p>
+<p style="color:red">事件冒泡</p>
+
+<p>在一个对象上触发某类事件（比如onclick事件），如果此对象定义了此事件的处理程序，那么此事件就会调用这个处理程序，如果没有定义此事件处理程序或者事件返回true，那么这个事件会向这个对象的父级对象传播，从里到外，直至它被处理（父级对象所有同类事件都将被激活），或者它到达了对象层次的最顶层，即document对象（有些浏览器是window）。</p>
+<p style="color:red">事件捕获</p>
+
+<p>在不明白具体事件触发事件的目标对象,会先触发其父级对象,依次向下直到目标对象。最先触发事件捕获的对象时window对象。(由于老版本浏览器不支持,所以最好使用事件冒泡)</p>
+<p><b>先发生事件冒泡——&gt;出于目标阶段——&gt;事件冒泡阶段<b></b></b></p>
+<p><strong>两栏布局(自适应)如何实现</strong></p>
+<p>1.假定左边定宽,右边采取负margin实现。<br>2.flexbox实现<br>3.table-ceil</p>
+<p><strong>事件委托是什么？</strong></p>
+<p>利用事件冒泡或者事件捕获来获取事件来将子元素的事件绑定在父元素上。从而提高性能。</p>
+<p><strong>backbone和angular对比的优缺点是什么</strong></p>
+<p>backbone相对于angular轻量级,angular相对笨重一些。</p>
+<p>backbone的mvc有一定问题,逻辑控制写在view中,并没有独立的c,只有router</p>
+<p><strong>简要谈谈mvvm和mvc的区别</strong></p>
+<p>在MVC中，C是用来拦截请来绑定事件，然后通过C手动同步V与M。 在MVVC中，绑定事件等交互是在V中通过添加一些绑定属性实现，虽然这些事件回调是定义在VM中。另一个最大的不同是 VM与V是双向绑定的，全智能维护各种状态，并且VM会自动同步M</p>
+<hr>
+<p>2015.3.22<br><!--阿里实习offer已拿--><br>End.</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015-04/10/gulp/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          gulp的使用,前端开发逼格的飞升
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015-02/10/react-study/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">web前端框架——React</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="interview" data-title="阿里前端面试知识点总结" data-url="http://www.koily.com/2015-02/22/interview/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"li-yu"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 鲤鱼
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: undefined,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: undefined
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

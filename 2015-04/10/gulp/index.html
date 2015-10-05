@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>gulp的使用,前端开发逼格的飞升 | 鲤鱼</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="grunt的配置文件真是看得我头晕目眩,相比而言,gulp的API类似于unix的管道,一种熟悉的味道。
+大型项目的开发,前端流程化管理工具必不可少,gulp在此学习一下。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gulp的使用,前端开发逼格的飞升">
+<meta property="og:url" content="http://www.koily.com/2015-04/10/gulp/index.html">
+<meta property="og:site_name" content="鲤鱼">
+<meta property="og:description" content="grunt的配置文件真是看得我头晕目眩,相比而言,gulp的API类似于unix的管道,一种熟悉的味道。
+大型项目的开发,前端流程化管理工具必不可少,gulp在此学习一下。">
+<meta property="og:updated_time" content="2015-10-05T04:12:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gulp的使用,前端开发逼格的飞升">
+<meta name="twitter:description" content="grunt的配置文件真是看得我头晕目眩,相比而言,gulp的API类似于unix的管道,一种熟悉的味道。
+大型项目的开发,前端流程化管理工具必不可少,gulp在此学习一下。">
+  
+    <link rel="alternative" href="/atom.xml" title="鲤鱼" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="avate.jpeg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">鲤鱼</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">like a dog,like a god</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/不语">不语</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/koi646" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/li-yu-hang-65" title="zhihu">zhihu</a>
+					        
+								<a class="douban" target="_blank" href="http://www.douban.com/people/sololsl/" title="douban">douban</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/2201493834" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/web前端/" style="font-size: 20px;">web前端</a> <a href="/tags/不语/" style="font-size: 10px;">不语</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/惊蛰/" style="font-size: 10px;">惊蛰</a> <a href="/tags/源码阅读/" style="font-size: 10px;">源码阅读</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://jerryzou.com/">JerryZou</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://vinthony.me/">寸晓东</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://litten.github.io/">Litten</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">毕业于 西安电子科技大学2012届,想成为全栈工程师。理想是在活出不一样的人生。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">鲤鱼</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="avate.jpeg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">鲤鱼</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">like a dog,like a god</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/不语">不语</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/koi646" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/li-yu-hang-65" title="zhihu">zhihu</a>
+			        
+						<a class="douban" target="_blank" href="http://www.douban.com/people/sololsl/" title="douban">douban</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/2201493834" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-gulp" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015-04/10/gulp/" class="article-date">
+  	<time datetime="2015-04-09T16:00:00.000Z" itemprop="datePublished">4月 10 2015</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      gulp的使用,前端开发逼格的飞升
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web前端/">web前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>grunt的配置文件真是看得我头晕目眩,相比而言,gulp的API类似于unix的管道,一种熟悉的味道。</p>
+<p>大型项目的开发,前端流程化管理工具必不可少,gulp在此学习一下。</p>
+<a id="more"></a>
+<p><strong>提前准备</strong></p>
+<p>gulp是基于node的流程化管理工具,所以需要提前安装node。<br>1.<code>npm</code> 安装gulp和gulp的插件。<br>2.在项目中新建<code>gulpfile.js</code>文件,配置gulp。<br><strong>gulp常用API</strong></p>
+<p>1.<code>gulp.task</code>制定任务</p>
+<pre><code>gulp.task(<span class="string">'default'</span>,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+
+})<span class="comment">//制定默认任务,运行gulp命令会执行默认任务</span>
+</code></pre><p>接受两个参数 任务名和任务函数。</p>
+<pre><code>gulp.task(<span class="string">'liyu'</span>,[<span class="string">'qingting'</span>],<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+    <span class="comment">//这代表liyu任务依赖于qingting任务执行,所以会优先执行qingting任务再执行liyu任务</span>
+})
+</code></pre><p>2.<code>gulp.pipe</code>类似于Unix的管道,将执行的程序往下传递.</p>
+<p>3.<code>gulp.src</code>读取源文件</p>
+<pre><code>gulp.task(<span class="string">'js'</span>,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+    <span class="keyword">return</span> gulp.src(<span class="string">'js/*.js'</span>)<span class="comment">//读取js文件夹下的以.js结尾的文件</span>
+    .pipe(uglify())<span class="comment">//引入插件uglify压缩代码</span>
+    .pipe(gulp.dest(<span class="string">'build'</span>));<span class="comment">//生成的文件在根目录下的build.js</span>
+});
+</code></pre><p>读取的源文件可以是字符串地址,也可以是数组,支持正则表达式</p>
+<p>4.<code>gulp.dest</code>生成文件指定的地址</p>
+<p>5.<code>gulp.watch</code>指定需要监视的文件</p>
+<pre><code>gulp.task(<span class="string">'watch'</span>,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+    gulp.watch(<span class="string">'templates/*.ejs'</span>,[<span class="string">'build'</span>]);
+});<span class="comment">//templates目录下的ejs模板文件发生改变则执行build任务</span>
+</code></pre><p>接受两个参数 监视的文件 文件改变执行的任务<br>watch方法还能触发change事件</p>
+<pre><code><span class="keyword">var</span> watcher = gulp.watch(<span class="string">'templates/*.ejs'</span>,[<span class="string">'build'</span>]);
+watcher.on(<span class="string">'change'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>{
+    <span class="built_in">console</span>.log(<span class="string">'Event path '</span> + event.path);<span class="comment">//改变的文件的路径</span>
+    <span class="built_in">console</span>.log(<span class="string">'Event type'</span> + event.type);<span class="comment">//改变时间类型changed,delete,added事件类型</span>
+    <span class="built_in">console</span>.log(<span class="string">'模板文件发生了改变'</span>);
+})
+</code></pre><p><strong>常用gulp插件</strong></p>
+<p>1.<code>gulp-uglify</code> 压缩js代码<br>2.<code>jshint</code> 检测jst代码中的错误和潜在问题</p>
+<pre><code>gulp.task(<span class="string">'js'</span>,function(){
+    <span class="keyword">return</span> gulp.src(<span class="string">'js/*.js'</span>)
+    .<span class="keyword">pipe</span>(jshint())
+    .<span class="keyword">pipe</span>(jshint.reporter(<span class="string">'default'</span>))//jsshint出错时会打印
+    .<span class="keyword">pipe</span>(uglify())
+    .<span class="keyword">pipe</span>(concat(<span class="string">'app.js'</span>))
+    .<span class="keyword">pipe</span>(gulp.dest(<span class="string">'build'</span>));
+})
+</code></pre><p>3.<code>gulp-concat</code> 代码合并<br>4.<code>gulp-less</code> 编译less<br>5.<code>gulp-load-plugins</code> 自动从package.json中加载gulp插件到一个对象上,加载的插件使用驼峰命名法</p>
+<pre><code>var gulp = <span class="keyword">require</span>(<span class="string">'gulp'</span>),
+gulpLoadPlugins = <span class="keyword">require</span>(<span class="string">'gulp-load-plugins'</span>),
+plugins = gulpLoadPlugins();
+gulp.task(<span class="string">'js'</span>, function () {
+       <span class="keyword">return</span> gulp.src(<span class="string">'js/*.js'</span>)
+          .<span class="keyword">pipe</span>(plugins.jshint())
+          .<span class="keyword">pipe</span>(plugins.jshint.reporter(<span class="string">'default'</span>))
+          .<span class="keyword">pipe</span>(plugins.uglify())
+          .<span class="keyword">pipe</span>(plugins.concat(<span class="string">'app.js'</span>))
+          .<span class="keyword">pipe</span>(gulp.dest(<span class="string">'build'</span>));
+});
+</code></pre><p>6.<code>gulp-livereload</code> 文件修改时,自动更新网页,配合watch一起使用<br>7.<code>broserSync</code> 在代码修改的时候不会刷新页面,而是直接加在浏览器的css样式里面,在编写单页应用的时候这个功能非常有效<br>8.<code>gulp-react</code> 貌似是把jsx编译成js的插件<br>9.<code>gulp-minify-css</code> 压缩css<br>10.<code>gulp-bower</code> 执行bower命令<br>11.<code>gulp-autoprefixer</code>自动补全前缀<br>12.<code>gulp-rename</code>重命名文件<br>13.<code>gulp-nodemon</code> 执行node命令</p>
+<p>更多插件,请戳<a href="http://gulpjs.com/plugins/" target="_blank" rel="external">这里</a></p>
+<hr>
+<p>the end</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015-07/01/source-read/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          初级源码阅读
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015-02/22/interview/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">阿里前端面试知识点总结</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="gulp" data-title="gulp的使用,前端开发逼格的飞升" data-url="http://www.koily.com/2015-04/10/gulp/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"li-yu"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 鲤鱼
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: undefined,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: undefined
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
