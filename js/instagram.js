@@ -27,7 +27,7 @@ var Instagram = (function(){
 				<ul class="img-box-ul">'+liTmpl+'</ul>\
 				</section>').appendTo($(".instagram"));
 		}
-
+		console.log($(".instagram").lazyload);
 		$(".instagram").lazyload();
 		changeSize();
 
@@ -121,6 +121,7 @@ var Instagram = (function(){
 		init:function(){
 			//getList("https://api.instagram.com/v1/users/438522285/media/recent/?access_token=438522285.2082eef.ead70f432f444a2e8b1b341617637bf6&count=100");
 			var insid = $(".instagram").attr("data-client-id");
+			console.log(insid,"<<<<","3872009b8ad44f9bb140a0b4414b5f9c");
             var userId = $(".instagram").attr("data-user-id");
 
 			if(!insid){
@@ -128,6 +129,7 @@ var Instagram = (function(){
 				console.log("Please open 'http://instagram.com/developer/clients/manage/' to get your client-id.");
 				return;
 			}
+			console.log("https://api.instagram.com/v1/users/"+ userId +"/media/recent/?client_id="+insid+"&count=100");
 			getList("https://api.instagram.com/v1/users/"+ userId +"/media/recent/?client_id="+insid+"&count=100");
 			bind();
 		}
