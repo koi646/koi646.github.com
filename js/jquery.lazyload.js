@@ -30,7 +30,7 @@
             var srcSign = options.srcSign || "lazy-src";
             var errCallBack = options.errCallBack || function(){};
             var container = options.container || $(window);
-
+    
             /**
              * @description src正常
              */
